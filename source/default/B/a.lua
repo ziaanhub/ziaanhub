@@ -1,14 +1,25 @@
 --[[
     ZiaanHub Loader Animation
     Enhanced by @ziaandev
+    Compatible with Roblox
 ]]
 
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
 local Lighting = game:GetService("Lighting")
-local LocalPlayer = Players.LocalPlayer
 
--- Queue Loader Animation
+-- Pastikan script berjalan di client
+if not RunService:IsClient() then
+    return
+end
+
+local LocalPlayer = Players.LocalPlayer
+while not LocalPlayer do
+    Players:GetPropertyChangedSignal("LocalPlayer"):Wait()
+    LocalPlayer = Players.LocalPlayer
+end
+
 local function showQueueLoader()
     -- Create blur effect
     local blur = Instance.new("BlurEffect")
@@ -46,25 +57,37 @@ local function showQueueLoader()
     local function tweenOutAndDestroy()
         -- Tween out all letters
         for _, label in ipairs(letters) do
-            TweenService:Create(label, TweenInfo.new(0.3), {
+            local tween = TweenService:Create(label, TweenInfo.new(0.3), {
                 TextTransparency = 1,
                 TextSize = 30
-            }):Play()
+            })
+            tween:Play()
         end
         
         -- Tween out background and blur
         TweenService:Create(bg, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
         TweenService:Create(blur, TweenInfo.new(0.5), {Size = 0}):Play()
         
-        -- Wait for animations to complete then destroy
-        wait(0.6)
-        screenGui:Destroy()
-        blur:Destroy()
+        -- Tunggu dan destroy
+        delay(0.6, function()
+            if screenGui then
+                screenGui:Destroy()
+            end
+            if blur then
+                blur:Destroy()
+            end
+        end)
     end
 
-    -- Create and animate each letter
-    for i = 1, #word do
-        local char = word:sub(i, i)
+    -- Function untuk membuat animasi berurutan
+    local function animateLetters(index)
+        if index > #word then
+            -- Set timer untuk animasi keluar
+            delay(2, tweenOutAndDestroy)
+            return
+        end
+
+        local char = word:sub(index, index)
 
         local label = Instance.new("TextLabel")
         label.Text = char
@@ -76,7 +99,7 @@ local function showQueueLoader()
         label.TextSize = 30 
         label.Size = UDim2.new(0, 60, 0, 60)
         label.AnchorPoint = Vector2.new(0.5, 0.5)
-        label.Position = UDim2.new(0.5, (i - (#word / 2 + 0.5)) * 65, 0.5, 0)
+        label.Position = UDim2.new(0.5, (index - (#word / 2 + 0.5)) * 65, 0.5, 0)
         label.BackgroundTransparency = 1
         label.ZIndex = 2
         label.Parent = frame
@@ -89,15 +112,18 @@ local function showQueueLoader()
         tweenIn:Play()
 
         table.insert(letters, label)
-        wait(0.25) -- Delay between each letter
+        
+        -- Gunakan delay untuk animasi berurutan
+        delay(0.25, function()
+            animateLetters(index + 1)
+        end)
     end
 
-    -- Wait then animate out
-    wait(2)
-    tweenOutAndDestroy()
+    -- Mulai animasi
+    animateLetters(1)
 end
 
--- Enhanced loader with callback support
+-- Enhanced loader dengan callback support
 local function createAdvancedLoader(options)
     local config = {
         text = options.text or "ZIAANHUB",
@@ -155,18 +181,28 @@ local function createAdvancedLoader(options)
         TweenService:Create(bg, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
         TweenService:Create(blur, TweenInfo.new(0.5), {Size = 0}):Play()
         
-        -- Wait for animations to complete then destroy
-        wait(0.6)
-        screenGui:Destroy()
-        blur:Destroy()
-        
-        -- Call completion callback
-        config.onComplete()
+        -- Tunggu dan destroy
+        delay(0.6, function()
+            if screenGui then
+                screenGui:Destroy()
+            end
+            if blur then
+                blur:Destroy()
+            end
+            
+            -- Call completion callback
+            config.onComplete()
+        end)
     end
 
-    -- Create and animate each letter
-    for i = 1, #config.text do
-        local char = config.text:sub(i, i)
+    -- Function untuk animasi huruf berurutan
+    local function animateLetters(index)
+        if index > #config.text then
+            delay(config.duration, tweenOutAndDestroy)
+            return
+        end
+
+        local char = config.text:sub(index, index)
 
         local label = Instance.new("TextLabel")
         label.Text = char
@@ -178,12 +214,12 @@ local function createAdvancedLoader(options)
         label.TextSize = config.letterSize
         label.Size = UDim2.new(0, config.letterSize + 20, 0, config.letterSize + 20)
         label.AnchorPoint = Vector2.new(0.5, 0.5)
-        label.Position = UDim2.new(0.5, (i - (#config.text / 2 + 0.5)) * config.letterSpacing, 0.5, 0)
+        label.Position = UDim2.new(0.5, (index - (#config.text / 2 + 0.5)) * config.letterSpacing, 0.5, 0)
         label.BackgroundTransparency = 1
         label.ZIndex = 2
         label.Parent = frame
 
-        -- Add text stroke for better visibility
+        -- Add text stroke untuk visibilitas lebih baik
         local textStroke = Instance.new("UIStroke")
         textStroke.Color = Color3.fromRGB(255, 255, 255)
         textStroke.Thickness = 2
@@ -201,12 +237,14 @@ local function createAdvancedLoader(options)
         TweenService:Create(textStroke, TweenInfo.new(0.3), {Transparency = 0.7}):Play()
 
         table.insert(letters, label)
-        wait(0.25) -- Delay between each letter
+        
+        delay(0.25, function()
+            animateLetters(index + 1)
+        end)
     end
 
-    -- Wait then animate out
-    wait(config.duration)
-    tweenOutAndDestroy()
+    -- Mulai animasi
+    animateLetters(1)
     
     return screenGui
 end
@@ -222,8 +260,3 @@ return {
     createAdvancedLoader = createAdvancedLoader,
     quickLoader = quickLoader
 }
-
--- Example usage:
--- showQueueLoader() -- Basic loader
--- createAdvancedLoader({text = "LOADING", duration = 3}) -- Custom loader
--- quickLoader() -- Quick basic loader
