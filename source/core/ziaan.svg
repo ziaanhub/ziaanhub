@@ -1,163 +1,199 @@
-<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+<svg width="500" height="150" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="pixelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#6366f1" />
       <stop offset="100%" stop-color="#818cf8" />
     </linearGradient>
     
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" result="coloredBlur"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <rect width="20" height="20" fill="#0d1117" />
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1f2937" stroke-width="0.5" />
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <rect width="25" height="25" fill="url(#bgGradient)" />
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#334155" stroke-width="1" />
     </pattern>
+    
+    <style>
+      @keyframes floatIn {
+        0% { 
+          opacity: 0; 
+          transform: translateY(-20px) scale(0.9);
+        }
+        60% {
+          opacity: 0.9;
+          transform: translateY(3px) scale(1.02);
+        }
+        100% { 
+          opacity: 1; 
+          transform: translateY(0) scale(1);
+        }
+      }
+      
+      @keyframes glowPulse {
+        0%, 100% { 
+          fill: url(#pixelGradient);
+          filter: url(#glow);
+        }
+        50% { 
+          fill: #a5b4fc;
+          filter: url(#glow);
+        }
+      }
+      
+      @keyframes gridPulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.7; }
+      }
+      
+      .pixel {
+        opacity: 0;
+        animation: floatIn 0.7s cubic-bezier(0.215, 0.610, 0.355, 1) forwards, 
+                   glowPulse 3.5s ease-in-out infinite;
+        rx: 2;
+        ry: 2;
+      }
+      
+      .grid-bg {
+        animation: gridPulse 6s ease-in-out infinite;
+      }
+      
+      /* Animation delays for each letter */
+      .letter-z .pixel { animation-delay: calc(0.1s + var(--delay, 0s)); }
+      .letter-i .pixel { animation-delay: calc(0.5s + var(--delay, 0s)); }
+      .letter-a1 .pixel { animation-delay: calc(0.9s + var(--delay, 0s)); }
+      .letter-a2 .pixel { animation-delay: calc(1.3s + var(--delay, 0s)); }
+      .letter-n .pixel { animation-delay: calc(1.7s + var(--delay, 0s)); }
+    </style>
   </defs>
   
-  <style>
-    @keyframes floatIn {
-      0% { 
-        opacity: 0; 
-        transform: translateY(-30px) scale(0.8);
-      }
-      70% {
-        opacity: 0.8;
-        transform: translateY(5px) scale(1.05);
-      }
-      100% { 
-        opacity: 1; 
-        transform: translateY(0) scale(1);
-      }
-    }
-    
-    @keyframes glowPulse {
-      0%, 100% { 
-        fill: url(#pixelGradient);
-        filter: url(#glow);
-      }
-      50% { 
-        fill: #c7d2fe;
-        filter: url(#glow);
-      }
-    }
-    
-    @keyframes gridPulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
-    }
-    
-    .pixel {
-      opacity: 0;
-      animation: floatIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, 
-                 glowPulse 3s ease-in-out infinite;
-    }
-    
-    .grid-bg {
-      animation: gridPulse 5s ease-in-out infinite;
-    }
-    
-    /* Animation delays for each letter */
-    .letter-z .pixel { animation-delay: calc(0.1s + var(--delay, 0s)); }
-    .letter-i .pixel { animation-delay: calc(0.4s + var(--delay, 0s)); }
-    .letter-a1 .pixel { animation-delay: calc(0.7s + var(--delay, 0s)); }
-    .letter-a2 .pixel { animation-delay: calc(1.0s + var(--delay, 0s)); }
-    .letter-n .pixel { animation-delay: calc(1.3s + var(--delay, 0s)); }
-  </style>
-  
   <!-- Background -->
-  <rect width="400" height="120" fill="#0d1117" />
-  <rect width="400" height="120" fill="url(#grid)" class="grid-bg" />
+  <rect width="500" height="150" fill="url(#bgGradient)" />
+  <rect width="500" height="150" fill="url(#grid)" class="grid-bg" />
   
-  <!-- Huruf Z -->
-  <g transform="translate(50, 35)" class="letter-z">
-    <rect x="0" y="0" width="15" height="15" class="pixel" style="--delay: 0.0s" />
-    <rect x="15" y="0" width="15" height="15" class="pixel" style="--delay: 0.05s" />
-    <rect x="30" y="0" width="15" height="15" class="pixel" style="--delay: 0.10s" />
-    <rect x="45" y="0" width="15" height="15" class="pixel" style="--delay: 0.15s" />
+  <!-- Huruf Z - Lebih jelas dengan bentuk yang lebih tebal -->
+  <g transform="translate(60, 40)" class="letter-z">
+    <!-- Baris atas -->
+    <rect x="0" y="0" width="18" height="18" class="pixel" style="--delay: 0.0s" />
+    <rect x="18" y="0" width="18" height="18" class="pixel" style="--delay: 0.03s" />
+    <rect x="36" y="0" width="18" height="18" class="pixel" style="--delay: 0.06s" />
+    <rect x="54" y="0" width="18" height="18" class="pixel" style="--delay: 0.09s" />
+    <rect x="72" y="0" width="18" height="18" class="pixel" style="--delay: 0.12s" />
     
-    <rect x="30" y="15" width="15" height="15" class="pixel" style="--delay: 0.20s" />
-    <rect x="15" y="30" width="15" height="15" class="pixel" style="--delay: 0.25s" />
+    <!-- Diagonal -->
+    <rect x="54" y="18" width="18" height="18" class="pixel" style="--delay: 0.15s" />
+    <rect x="36" y="36" width="18" height="18" class="pixel" style="--delay: 0.18s" />
+    <rect x="18" y="54" width="18" height="18" class="pixel" style="--delay: 0.21s" />
     
-    <rect x="0" y="45" width="15" height="15" class="pixel" style="--delay: 0.30s" />
-    <rect x="15" y="45" width="15" height="15" class="pixel" style="--delay: 0.35s" />
-    <rect x="30" y="45" width="15" height="15" class="pixel" style="--delay: 0.40s" />
-    <rect x="45" y="45" width="15" height="15" class="pixel" style="--delay: 0.45s" />
+    <!-- Baris bawah -->
+    <rect x="0" y="72" width="18" height="18" class="pixel" style="--delay: 0.24s" />
+    <rect x="18" y="72" width="18" height="18" class="pixel" style="--delay: 0.27s" />
+    <rect x="36" y="72" width="18" height="18" class="pixel" style="--delay: 0.30s" />
+    <rect x="54" y="72" width="18" height="18" class="pixel" style="--delay: 0.33s" />
+    <rect x="72" y="72" width="18" height="18" class="pixel" style="--delay: 0.36s" />
   </g>
   
-  <!-- Huruf i -->
-  <g transform="translate(120, 35)" class="letter-i">
-    <rect x="15" y="0" width="15" height="15" class="pixel" style="--delay: 0.0s" />
-    <rect x="15" y="15" width="15" height="15" class="pixel" style="--delay: 0.05s" />
-    <rect x="15" y="30" width="15" height="15" class="pixel" style="--delay: 0.10s" />
-    <rect x="15" y="45" width="15" height="15" class="pixel" style="--delay: 0.15s" />
+  <!-- Huruf i - Lebih jelas dengan titik yang lebih besar -->
+  <g transform="translate(155, 40)" class="letter-i">
+    <!-- Titik di atas -->
+    <rect x="27" y="0" width="18" height="18" class="pixel" style="--delay: 0.0s" />
+    
+    <!-- Batang vertikal -->
+    <rect x="27" y="27" width="18" height="18" class="pixel" style="--delay: 0.05s" />
+    <rect x="27" y="45" width="18" height="18" class="pixel" style="--delay: 0.10s" />
+    <rect x="27" y="63" width="18" height="18" class="pixel" style="--delay: 0.15s" />
+    <rect x="27" y="81" width="18" height="18" class="pixel" style="--delay: 0.20s" />
   </g>
   
-  <!-- Huruf a (pertama) -->
-  <g transform="translate(160, 35)" class="letter-a1">
-    <rect x="15" y="0" width="15" height="15" class="pixel" style="--delay: 0.0s" />
-    <rect x="30" y="0" width="15" height="15" class="pixel" style="--delay: 0.05s" />
+  <!-- Huruf a (pertama) - Lebih jelas dengan bentuk yang lebih proporsional -->
+  <g transform="translate(200, 40)" class="letter-a1">
+    <!-- Bagian atas -->
+    <rect x="18" y="0" width="18" height="18" class="pixel" style="--delay: 0.0s" />
+    <rect x="36" y="0" width="18" height="18" class="pixel" style="--delay: 0.03s" />
+    <rect x="54" y="0" width="18" height="18" class="pixel" style="--delay: 0.06s" />
     
-    <rect x="0" y="15" width="15" height="15" class="pixel" style="--delay: 0.10s" />
-    <rect x="15" y="15" width="15" height="15" class="pixel" style="--delay: 0.15s" />
-    <rect x="30" y="15" width="15" height="15" class="pixel" style="--delay: 0.20s" />
-    <rect x="45" y="15" width="15" height="15" class="pixel" style="--delay: 0.25s" />
+    <!-- Baris kedua -->
+    <rect x="0" y="18" width="18" height="18" class="pixel" style="--delay: 0.09s" />
+    <rect x="18" y="18" width="18" height="18" class="pixel" style="--delay: 0.12s" />
+    <rect x="36" y="18" width="18" height="18" class="pixel" style="--delay: 0.15s" />
+    <rect x="54" y="18" width="18" height="18" class="pixel" style="--delay: 0.18s" />
+    <rect x="72" y="18" width="18" height="18" class="pixel" style="--delay: 0.21s" />
     
-    <rect x="0" y="30" width="15" height="15" class="pixel" style="--delay: 0.30s" />
-    <rect x="30" y="30" width="15" height="15" class="pixel" style="--delay: 0.35s" />
-    <rect x="45" y="30" width="15" height="15" class="pixel" style="--delay: 0.40s" />
+    <!-- Baris ketiga -->
+    <rect x="0" y="36" width="18" height="18" class="pixel" style="--delay: 0.24s" />
+    <rect x="36" y="36" width="18" height="18" class="pixel" style="--delay: 0.27s" />
+    <rect x="72" y="36" width="18" height="18" class="pixel" style="--delay: 0.30s" />
     
-    <rect x="0" y="45" width="15" height="15" class="pixel" style="--delay: 0.45s" />
-    <rect x="30" y="45" width="15" height="15" class="pixel" style="--delay: 0.50s" />
-    <rect x="45" y="45" width="15" height="15" class="pixel" style="--delay: 0.55s" />
+    <!-- Baris keempat -->
+    <rect x="0" y="54" width="18" height="18" class="pixel" style="--delay: 0.33s" />
+    <rect x="36" y="54" width="18" height="18" class="pixel" style="--delay: 0.36s" />
+    <rect x="72" y="54" width="18" height="18" class="pixel" style="--delay: 0.39s" />
     
-    <rect x="15" y="60" width="15" height="15" class="pixel" style="--delay: 0.60s" />
-    <rect x="30" y="60" width="15" height="15" class="pixel" style="--delay: 0.65s" />
+    <!-- Baris kelima -->
+    <rect x="18" y="72" width="18" height="18" class="pixel" style="--delay: 0.42s" />
+    <rect x="36" y="72" width="18" height="18" class="pixel" style="--delay: 0.45s" />
+    <rect x="54" y="72" width="18" height="18" class="pixel" style="--delay: 0.48s" />
   </g>
   
-  <!-- Huruf a (kedua) -->
-  <g transform="translate(220, 35)" class="letter-a2">
-    <rect x="15" y="0" width="15" height="15" class="pixel" style="--delay: 0.0s" />
-    <rect x="30" y="0" width="15" height="15" class="pixel" style="--delay: 0.05s" />
+  <!-- Huruf a (kedua) - Sama dengan yang pertama -->
+  <g transform="translate(290, 40)" class="letter-a2">
+    <!-- Bagian atas -->
+    <rect x="18" y="0" width="18" height="18" class="pixel" style="--delay: 0.0s" />
+    <rect x="36" y="0" width="18" height="18" class="pixel" style="--delay: 0.03s" />
+    <rect x="54" y="0" width="18" height="18" class="pixel" style="--delay: 0.06s" />
     
-    <rect x="0" y="15" width="15" height="15" class="pixel" style="--delay: 0.10s" />
-    <rect x="15" y="15" width="15" height="15" class="pixel" style="--delay: 0.15s" />
-    <rect x="30" y="15" width="15" height="15" class="pixel" style="--delay: 0.20s" />
-    <rect x="45" y="15" width="15" height="15" class="pixel" style="--delay: 0.25s" />
+    <!-- Baris kedua -->
+    <rect x="0" y="18" width="18" height="18" class="pixel" style="--delay: 0.09s" />
+    <rect x="18" y="18" width="18" height="18" class="pixel" style="--delay: 0.12s" />
+    <rect x="36" y="18" width="18" height="18" class="pixel" style="--delay: 0.15s" />
+    <rect x="54" y="18" width="18" height="18" class="pixel" style="--delay: 0.18s" />
+    <rect x="72" y="18" width="18" height="18" class="pixel" style="--delay: 0.21s" />
     
-    <rect x="0" y="30" width="15" height="15" class="pixel" style="--delay: 0.30s" />
-    <rect x="30" y="30" width="15" height="15" class="pixel" style="--delay: 0.35s" />
-    <rect x="45" y="30" width="15" height="15" class="pixel" style="--delay: 0.40s" />
+    <!-- Baris ketiga -->
+    <rect x="0" y="36" width="18" height="18" class="pixel" style="--delay: 0.24s" />
+    <rect x="36" y="36" width="18" height="18" class="pixel" style="--delay: 0.27s" />
+    <rect x="72" y="36" width="18" height="18" class="pixel" style="--delay: 0.30s" />
     
-    <rect x="0" y="45" width="15" height="15" class="pixel" style="--delay: 0.45s" />
-    <rect x="30" y="45" width="15" height="15" class="pixel" style="--delay: 0.50s" />
-    <rect x="45" y="45" width="15" height="15" class="pixel" style="--delay: 0.55s" />
+    <!-- Baris keempat -->
+    <rect x="0" y="54" width="18" height="18" class="pixel" style="--delay: 0.33s" />
+    <rect x="36" y="54" width="18" height="18" class="pixel" style="--delay: 0.36s" />
+    <rect x="72" y="54" width="18" height="18" class="pixel" style="--delay: 0.39s" />
     
-    <rect x="15" y="60" width="15" height="15" class="pixel" style="--delay: 0.60s" />
-    <rect x="30" y="60" width="15" height="15" class="pixel" style="--delay: 0.65s" />
+    <!-- Baris kelima -->
+    <rect x="18" y="72" width="18" height="18" class="pixel" style="--delay: 0.42s" />
+    <rect x="36" y="72" width="18" height="18" class="pixel" style="--delay: 0.45s" />
+    <rect x="54" y="72" width="18" height="18" class="pixel" style="--delay: 0.48s" />
   </g>
   
-  <!-- Huruf n -->
-  <g transform="translate(280, 35)" class="letter-n">
-    <rect x="0" y="0" width="15" height="15" class="pixel" style="--delay: 0.0s" />
-    <rect x="15" y="0" width="15" height="15" class="pixel" style="--delay: 0.05s" />
-    <rect x="30" y="0" width="15" height="15" class="pixel" style="--delay: 0.10s" />
-    <rect x="45" y="0" width="15" height="15" class="pixel" style="--delay: 0.15s" />
+  <!-- Huruf n - Lebih jelas dengan bentuk yang lebih tebal -->
+  <g transform="translate(380, 40)" class="letter-n">
+    <!-- Batang kiri -->
+    <rect x="0" y="0" width="18" height="18" class="pixel" style="--delay: 0.0s" />
+    <rect x="0" y="18" width="18" height="18" class="pixel" style="--delay: 0.03s" />
+    <rect x="0" y="36" width="18" height="18" class="pixel" style="--delay: 0.06s" />
+    <rect x="0" y="54" width="18" height="18" class="pixel" style="--delay: 0.09s" />
+    <rect x="0" y="72" width="18" height="18" class="pixel" style="--delay: 0.12s" />
     
-    <rect x="0" y="15" width="15" height="15" class="pixel" style="--delay: 0.20s" />
-    <rect x="30" y="15" width="15" height="15" class="pixel" style="--delay: 0.25s" />
-    <rect x="45" y="15" width="15" height="15" class="pixel" style="--delay: 0.30s" />
+    <!-- Bagian tengah -->
+    <rect x="18" y="18" width="18" height="18" class="pixel" style="--delay: 0.15s" />
+    <rect x="36" y="36" width="18" height="18" class="pixel" style="--delay: 0.18s" />
+    <rect x="54" y="54" width="18" height="18" class="pixel" style="--delay: 0.21s" />
     
-    <rect x="0" y="30" width="15" height="15" class="pixel" style="--delay: 0.35s" />
-    <rect x="30" y="30" width="15" height="15" class="pixel" style="--delay: 0.40s" />
-    <rect x="45" y="30" width="15" height="15" class="pixel" style="--delay: 0.45s" />
-    
-    <rect x="0" y="45" width="15" height="15" class="pixel" style="--delay: 0.50s" />
-    <rect x="30" y="45" width="15" height="15" class="pixel" style="--delay: 0.55s" />
-    <rect x="45" y="45" width="15" height="15" class="pixel" style="--delay: 0.60s" />
+    <!-- Batang kanan -->
+    <rect x="72" y="18" width="18" height="18" class="pixel" style="--delay: 0.24s" />
+    <rect x="72" y="36" width="18" height="18" class="pixel" style="--delay: 0.27s" />
+    <rect x="72" y="54" width="18" height="18" class="pixel" style="--delay: 0.30s" />
+    <rect x="72" y="72" width="18" height="18" class="pixel" style="--delay: 0.33s" />
   </g>
 </svg>
