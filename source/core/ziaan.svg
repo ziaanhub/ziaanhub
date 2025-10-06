@@ -1,1 +1,201 @@
-
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes pixelIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes glow {
+      0%, 100% { fill: #4f46e5; }
+      50% { fill: #818cf8; }
+    }
+    
+    .pixel {
+      opacity: 0;
+      animation: pixelIn 0.5s forwards, glow 2s infinite;
+    }
+    
+    /* Animasi untuk setiap huruf dengan delay berbeda */
+    .pixel-1 { animation-delay: 0.1s, 0.1s; }
+    .pixel-2 { animation-delay: 0.2s, 0.2s; }
+    .pixel-3 { animation-delay: 0.3s, 0.3s; }
+    .pixel-4 { animation-delay: 0.4s, 0.4s; }
+    .pixel-5 { animation-delay: 0.5s, 0.5s; }
+    .pixel-6 { animation-delay: 0.6s, 0.6s; }
+    .pixel-7 { animation-delay: 0.7s, 0.7s; }
+    .pixel-8 { animation-delay: 0.8s, 0.8s; }
+  </style>
+  
+  <!-- Background grid -->
+  <rect width="400" height="100" fill="#0d1117" />
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+    <rect width="10" height="10" fill="#0d1117" />
+    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#161b22" stroke-width="0.5" />
+  </pattern>
+  <rect width="400" height="100" fill="url(#grid)" />
+  
+  <!-- Huruf Z -->
+  <g transform="translate(50, 30)">
+    <rect x="0" y="0" width="10" height="10" class="pixel pixel-1" />
+    <rect x="10" y="0" width="10" height="10" class="pixel pixel-2" />
+    <rect x="20" y="0" width="10" height="10" class="pixel pixel-3" />
+    <rect x="30" y="0" width="10" height="10" class="pixel pixel-4" />
+    <rect x="40" y="0" width="10" height="10" class="pixel pixel-5" />
+    
+    <rect x="30" y="10" width="10" height="10" class="pixel pixel-6" />
+    <rect x="20" y="20" width="10" height="10" class="pixel pixel-7" />
+    <rect x="10" y="30" width="10" height="10" class="pixel pixel-8" />
+    
+    <rect x="0" y="40" width="10" height="10" class="pixel pixel-9" />
+    <rect x="10" y="40" width="10" height="10" class="pixel pixel-10" />
+    <rect x="20" y="40" width="10" height="10" class="pixel pixel-11" />
+    <rect x="30" y="40" width="10" height="10" class="pixel pixel-12" />
+    <rect x="40" y="40" width="10" height="10" class="pixel pixel-13" />
+  </g>
+  
+  <!-- Huruf i -->
+  <g transform="translate(110, 30)">
+    <rect x="0" y="0" width="10" height="10" class="pixel pixel-14" />
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-15" />
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-16" />
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-17" />
+    <rect x="0" y="40" width="10" height="10" class="pixel pixel-18" />
+  </g>
+  
+  <!-- Huruf a (pertama) -->
+  <g transform="translate(130, 30)">
+    <rect x="10" y="0" width="10" height="10" class="pixel pixel-19" />
+    <rect x="20" y="0" width="10" height="10" class="pixel pixel-20" />
+    <rect x="30" y="0" width="10" height="10" class="pixel pixel-21" />
+    
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-22" />
+    <rect x="10" y="10" width="10" height="10" class="pixel pixel-23" />
+    <rect x="20" y="10" width="10" height="10" class="pixel pixel-24" />
+    <rect x="30" y="10" width="10" height="10" class="pixel pixel-25" />
+    <rect x="40" y="10" width="10" height="10" class="pixel pixel-26" />
+    
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-27" />
+    <rect x="20" y="20" width="10" height="10" class="pixel pixel-28" />
+    <rect x="40" y="20" width="10" height="10" class="pixel pixel-29" />
+    
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-30" />
+    <rect x="20" y="30" width="10" height="10" class="pixel pixel-31" />
+    <rect x="40" y="30" width="10" height="10" class="pixel pixel-32" />
+    
+    <rect x="10" y="40" width="10" height="10" class="pixel pixel-33" />
+    <rect x="20" y="40" width="10" height="10" class="pixel pixel-34" />
+    <rect x="30" y="40" width="10" height="10" class="pixel pixel-35" />
+  </g>
+  
+  <!-- Huruf a (kedua) -->
+  <g transform="translate(180, 30)">
+    <rect x="10" y="0" width="10" height="10" class="pixel pixel-36" />
+    <rect x="20" y="0" width="10" height="10" class="pixel pixel-37" />
+    <rect x="30" y="0" width="10" height="10" class="pixel pixel-38" />
+    
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-39" />
+    <rect x="10" y="10" width="10" height="10" class="pixel pixel-40" />
+    <rect x="20" y="10" width="10" height="10" class="pixel pixel-41" />
+    <rect x="30" y="10" width="10" height="10" class="pixel pixel-42" />
+    <rect x="40" y="10" width="10" height="10" class="pixel pixel-43" />
+    
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-44" />
+    <rect x="20" y="20" width="10" height="10" class="pixel pixel-45" />
+    <rect x="40" y="20" width="10" height="10" class="pixel pixel-46" />
+    
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-47" />
+    <rect x="20" y="30" width="10" height="10" class="pixel pixel-48" />
+    <rect x="40" y="30" width="10" height="10" class="pixel pixel-49" />
+    
+    <rect x="10" y="40" width="10" height="10" class="pixel pixel-50" />
+    <rect x="20" y="40" width="10" height="10" class="pixel pixel-51" />
+    <rect x="30" y="40" width="10" height="10" class="pixel pixel-52" />
+  </g>
+  
+  <!-- Huruf n -->
+  <g transform="translate(230, 30)">
+    <rect x="0" y="0" width="10" height="10" class="pixel pixel-53" />
+    <rect x="10" y="0" width="10" height="10" class="pixel pixel-54" />
+    <rect x="20" y="0" width="10" height="10" class="pixel pixel-55" />
+    <rect x="30" y="0" width="10" height="10" class="pixel pixel-56" />
+    <rect x="40" y="0" width="10" height="10" class="pixel pixel-57" />
+    
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-58" />
+    <rect x="20" y="10" width="10" height="10" class="pixel pixel-59" />
+    <rect x="40" y="10" width="10" height="10" class="pixel pixel-60" />
+    
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-61" />
+    <rect x="20" y="20" width="10" height="10" class="pixel pixel-62" />
+    <rect x="40" y="20" width="10" height="10" class="pixel pixel-63" />
+    
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-64" />
+    <rect x="20" y="30" width="10" height="10" class="pixel pixel-65" />
+    <rect x="40" y="30" width="10" height="10" class="pixel pixel-66" />
+    
+    <rect x="0" y="40" width="10" height="10" class="pixel pixel-67" />
+    <rect x="20" y="40" width="10" height="10" class="pixel pixel-68" />
+    <rect x="40" y="40" width="10" height="10" class="pixel pixel-69" />
+  </g>
+  
+  <!-- Huruf H -->
+  <g transform="translate(290, 30)">
+    <rect x="0" y="0" width="10" height="10" class="pixel pixel-70" />
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-71" />
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-72" />
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-73" />
+    <rect x="0" y="40" width="10" height="10" class="pixel pixel-74" />
+    
+    <rect x="10" y="20" width="10" height="10" class="pixel pixel-75" />
+    <rect x="20" y="20" width="10" height="10" class="pixel pixel-76" />
+    <rect x="30" y="20" width="10" height="10" class="pixel pixel-77" />
+    
+    <rect x="40" y="0" width="10" height="10" class="pixel pixel-78" />
+    <rect x="40" y="10" width="10" height="10" class="pixel pixel-79" />
+    <rect x="40" y="20" width="10" height="10" class="pixel pixel-80" />
+    <rect x="40" y="30" width="10" height="10" class="pixel pixel-81" />
+    <rect x="40" y="40" width="10" height="10" class="pixel pixel-82" />
+  </g>
+  
+  <!-- Huruf u -->
+  <g transform="translate(340, 30)">
+    <rect x="0" y="0" width="10" height="10" class="pixel pixel-83" />
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-84" />
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-85" />
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-86" />
+    
+    <rect x="10" y="40" width="10" height="10" class="pixel pixel-87" />
+    <rect x="20" y="40" width="10" height="10" class="pixel pixel-88" />
+    <rect x="30" y="40" width="10" height="10" class="pixel pixel-89" />
+    
+    <rect x="40" y="0" width="10" height="10" class="pixel pixel-90" />
+    <rect x="40" y="10" width="10" height="10" class="pixel pixel-91" />
+    <rect x="40" y="20" width="10" height="10" class="pixel pixel-92" />
+    <rect x="40" y="30" width="10" height="10" class="pixel pixel-93" />
+  </g>
+  
+  <!-- Huruf b -->
+  <g transform="translate(390, 30)">
+    <rect x="0" y="0" width="10" height="10" class="pixel pixel-94" />
+    <rect x="0" y="10" width="10" height="10" class="pixel pixel-95" />
+    <rect x="0" y="20" width="10" height="10" class="pixel pixel-96" />
+    <rect x="0" y="30" width="10" height="10" class="pixel pixel-97" />
+    <rect x="0" y="40" width="10" height="10" class="pixel pixel-98" />
+    
+    <rect x="10" y="0" width="10" height="10" class="pixel pixel-99" />
+    <rect x="20" y="0" width="10" height="10" class="pixel pixel-100" />
+    <rect x="30" y="0" width="10" height="10" class="pixel pixel-101" />
+    
+    <rect x="10" y="20" width="10" height="10" class="pixel pixel-102" />
+    <rect x="20" y="20" width="10" height="10" class="pixel pixel-103" />
+    <rect x="30" y="20" width="10" height="10" class="pixel pixel-104" />
+    
+    <rect x="10" y="40" width="10" height="10" class="pixel pixel-105" />
+    <rect x="20" y="40" width="10" height="10" class="pixel pixel-106" />
+    <rect x="30" y="40" width="10" height="10" class="pixel pixel-107" />
+    
+    <rect x="40" y="10" width="10" height="10" class="pixel pixel-108" />
+    <rect x="40" y="30" width="10" height="10" class="pixel pixel-109" />
+  </g>
+</svg>
