@@ -1,7 +1,7 @@
 # ZiaanHub  [![Ziaan Community](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/z2uNNQHrgZ)
 
 <picture>
-    <img src="ZiaanHub/ZiaanHub.jpg" alt="ZiaanHub.jpg">
+    <img src="ziaanhub/docs/image/ziaanhub.jpg" alt="ZiaanHub.jpg">
 </picture>
 
 > [!WARNING]
