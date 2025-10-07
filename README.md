@@ -9,8 +9,7 @@
 
 ### Loadstring
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/core/ziaanhub.lua"))()
-
+loadstring(game:HttpGet("https://ziaanhub.github.io/ziaanhub.lua"))()
 ```
 
 ### Supported Games
