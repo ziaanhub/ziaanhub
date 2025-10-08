@@ -16,7 +16,7 @@ loadstring(game:HttpGet("https://ziaanhub.github.io/ziaanhub.lua"))()
 - [Blox Fruit](https://www.roblox.com/id/games/2753915549/)
 - [Build A Beehive](https://www.roblox.com/id/games/113604074601559/)
 - [Poop A Brainrot](https://www.roblox.com/id/games/82321750197896/)
-- [Evade](roblox://placeId=823217501978)
+- [Evade](https://listwr.com/N3bK0s)
 
 > [!CAUTION]
 > If you encounter an error while running ZiaanHub, please report it on [Discord](https://discord.gg/z2uNNQHrgZ).
