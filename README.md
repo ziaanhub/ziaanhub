@@ -1,7 +1,7 @@
 # ZiaanHub  [![Ziaan Community](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/z2uNNQHrgZ)
 
 <picture>
-    <img src="ziaanhub/docs/image/ziaanhub.jpg" alt="ZiaanHub.jpg">
+    <img src="ziaanhub/docs/image/ziaanhub.jpg" alt="ZiaanHub">
 </picture>
 
 > [!WARNING]
@@ -13,10 +13,10 @@ loadstring(game:HttpGet("https://ziaanhub.github.io/ziaanhub.lua"))()
 ```
 
 ### Supported Games
-- [Blox Fruit](https://www.roblox.com/id/games/2753915549/)
-- [Build A Beehive](https://www.roblox.com/id/games/113604074601559/)
-- [Poop A Brainrot](https://www.roblox.com/id/games/82321750197896/)
-- [Evade](https://www.roblox.com/id/games/9872472334)
+- [Blox Fruit](https://www.roblox.com/games/2753915549/)
+- [Build A Beehive](https://www.roblox.com/games/113604074601559/)
+- [Poop A Brainrot](https://www.roblox.com/games/82321750197896/)
+- [Evade](https://www.roblox.com/games/9872472334)
 
 > [!CAUTION]
 > If you encounter an error while running ZiaanHub, please report it on [Discord](https://discord.gg/z2uNNQHrgZ).
