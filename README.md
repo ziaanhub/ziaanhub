@@ -1,4 +1,4 @@
-<img width="1280" height="1280" alt="1000289936" src="https://github.com/user-attachments/assets/9184e9ee-ff32-416d-bd1f-a66c34452044" />
+
 # ZiaanHub  [![Ziaan Community](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/z2uNNQHrgZ)
 
 <picture>
