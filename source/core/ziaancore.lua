@@ -5,14 +5,14 @@ local Games = {
   [2753915549] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/C/Games/BF/csp.lua", -- Blox Fruit Sea 1
   [4442272183] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/C/Games/BF/csp.lua", -- Blox Fruit Sea 2
   [7449423635] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/C/Games/BF/csp.lua", -- Blox Fruit Sea 3  
-  [10324346056] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua", -- evade Big Team
-  [9872472334] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua",  -- evade Evade
-  [10662542523] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua", -- evade Casual
-  [10324347967] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua", -- evade Social Space
-  [121271605799901] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua", -- evade Player Nextbots
-  [10808838353] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua", -- evade VC Only
-  [11353528705] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua",  -- evade Pro
-  [99214917572799] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/ces.lua", -- evade Custom Servers
+  [10324346056] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua", -- evade Big Team
+  [9872472334] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua",  -- evade Evade
+  [10662542523] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua", -- evade Casual
+  [10324347967] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua", -- evade Social Space
+  [121271605799901] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua", -- evade Player Nextbots
+  [10808838353] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua", -- evade VC Only
+  [11353528705] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua",  -- evade Pro
+  [99214917572799] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/EVD/csx.lua", -- evade Custom Servers
 
 }
 
