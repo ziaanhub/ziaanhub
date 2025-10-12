@@ -13,8 +13,8 @@ local Games = {
   [10808838353] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/error.lua", -- evade VC Only
   [11353528705] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/error.lua",  -- evade Pro
   [99214917572799] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/Games/error.lua", -- evade Custom Servers
-  [12334109280] = "lmao", -- Guns & Black Powder
-  [14216737767] = "lmao", -- Guns & Black Powder Mobile
+  [12334109280] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/C/Games/GBD/vsp.lua", -- Guns & Black Powder
+  [14216737767] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/B/C/Games/GBD/vsp.lua", -- Guns & Black Powder Mobile
 }
 
 return Games
