@@ -1,7 +1,7 @@
 
 local Games = {
   [82321750197896] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/Games/PBB/csx.lua", -- PoopABrainRot
-  [113604074601559] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/Games/BAH/css.lua",  -- "Build a Beehive
+  [113604074601559] = "https://api.junkie-development.de/api/v1/luascripts/public/9173437547ff65f1148a4e005cf8f96f0be473db7370b93712f518fb1e9b0d4d/download",  -- "Build a Beehive
   [2753915549] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/C/Games/BF/csp.lua", -- Blox Fruit Sea 1
   [4442272183] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/C/Games/BF/csp.lua", -- Blox Fruit Sea 2
   [7449423635] = "https://raw.githubusercontent.com/ziaanhub/ziaanhub/refs/heads/main/source/default/A/B/C/Games/BF/csp.lua", -- Blox Fruit Sea 3  
