@@ -13,8 +13,8 @@ local Games = {
   [10808838353] = "https://api.junkie-development.de/api/v1/luascripts/public/58d5f72887efe4e2be63686921f34ab09823dbcd99d8b5729c2ff3cceac042ee/download", -- evade VC Only
   [11353528705] = "https://api.junkie-development.de/api/v1/luascripts/public/58d5f72887efe4e2be63686921f34ab09823dbcd99d8b5729c2ff3cceac042ee/download",  -- evade Pro
   [99214917572799] = "https://api.junkie-development.de/api/v1/luascripts/public/58d5f72887efe4e2be63686921f34ab09823dbcd99d8b5729c2ff3cceac042ee/download", -- evade Custom Servers
-  [12334109280] = "https://api.junkie-development.de/api/v1/luascripts/public/d476983263f1091bc175be7514a51fcff6079b51b3b64d6fa3a48dddb91f12dd/download", -- Guns & Black Powder
-  [14216737767] = "https://api.junkie-development.de/api/v1/luascripts/public/d476983263f1091bc175be7514a51fcff6079b51b3b64d6fa3a48dddb91f12dd/download", -- Guns & Black Powder Mobile
+  [12334109280] = "https://api.junkie-development.de/api/v1/luascripts/public/1b4600173e93961643e213f3861305f7a85ff0a12848f365bab057b1713d9515/download", -- Guns & Black Powder
+  [14216737767] = "https://api.junkie-development.de/api/v1/luascripts/public/1b4600173e93961643e213f3861305f7a85ff0a12848f365bab057b1713d9515/download", -- Guns & Black Powder Mobile
 }
 
 return Games
